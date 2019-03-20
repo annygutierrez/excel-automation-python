@@ -22,11 +22,14 @@ def process_workbook(filename):
                        min_col=4,
                        max_col=4)
 
+    print(values)
+
     chart = BarChart()
     chart.add_data(values)
-    sheet.add_chart(chart, 'e2')
+    # The cell E2 should be in uppercase
+    sheet.add_chart(chart, 'E2')
 
-    wb.save(filename)
+    wb.save('try.xlsx')
 
 
 process_workbook('transactions.xlsx')
